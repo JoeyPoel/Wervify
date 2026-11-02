@@ -1,0 +1,40 @@
+import { CaseStudy } from '../types/content.types';
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: 'installatietechniek',
+    title: 'Installatiebedrijf Midden-Nederland',
+    companySector: 'Installatietechniek & Duurzaamheid',
+    vacancyRole: '3x Allround Servicemonteur',
+    primaryMetric: '11 Dagen',
+    metricLabel: 'Tot eerste gekwalificeerde aanname',
+    timeframe: 'Campagneduur: 4 weken',
+    summary: 'Stond al 6 maanden open via traditionele vacaturebanken met nul geschikte reacties. Na livegang met gerichte Meta-video advertenties en WhatsApp filtering met Bo vonden zij binnen 3 weken alle drie de monteurs.',
+    highlightQuote: 'Eindelijk een aanpak die vakmensen aanspreekt die niet actief op Indeed zoeken.',
+    authorTitle: 'Operationeel Directeur',
+  },
+  {
+    id: 'logistiek',
+    title: 'Transport & Warehousing MKB',
+    companySector: 'Logistiek & Supply Chain',
+    vacancyRole: 'Teamleider Logistiek & CE Chauffeurs',
+    primaryMetric: '68%',
+    metricLabel: 'Kostenbesparing t.o.v. uitzendbureau',
+    timeframe: 'Campagneduur: 6 weken',
+    summary: 'Afhankelijk van dure uitzendkrachten met hoge wervingsmarges. Met Wervify bouwden ze een eigen regionale kandidatenpool op en namen ze vaste krachten aan met eigen regie over de arbeidsvoorwaarden.',
+    highlightQuote: 'Bo reageert direct in de avonduren wanneer chauffeurs tijd hebben om te reageren.',
+    authorTitle: 'HR-Manager',
+  },
+  {
+    id: 'zakelijke-dienstverlening',
+    title: 'Accountancy & Bedrijfsadvies',
+    companySector: 'Financiële Dienstverlening',
+    vacancyRole: 'Senior Assistent Accountant',
+    primaryMetric: '14 Kandidaten',
+    metricLabel: 'Gekwalificeerd via voorselectie',
+    timeframe: 'Campagneduur: 3 weken',
+    summary: 'In een extreem krappe markt wisten we door de informele sfeer en flexibele uren centraal te zetten 14 passieve kandidaten te laten reageren binnen 21 dagen.',
+    highlightQuote: 'De menselijke screening vooraf zorgde dat we uitsluitend serieuze kandidaten spraken.',
+    authorTitle: 'Managing Partner',
+  },
+];

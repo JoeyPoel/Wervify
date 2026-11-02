@@ -1,0 +1,39 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DemoRequest {
+  id           String   @id @default(cuid())
+  companyName  String
+  vacancyTitle String
+  salaryRange  String?
+  notes        String?
+  email        String
+  phone        String?
+  gdprConsent  Boolean  @default(false)
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model ContactMessage {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  company     String?
+  message     String
+  gdprConsent Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}

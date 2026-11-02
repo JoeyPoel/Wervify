@@ -1,0 +1,111 @@
+import { PricingTier, PricingAddOn } from '../types/content.types';
+
+export const PACKAGES: PricingTier[] = [
+  {
+    id: 'basis',
+    name: 'Basis',
+    badge: '1 Actieve Vacature',
+    popular: false,
+    tagline: 'Ideaal voor MKB-bedrijven met een incidentele of urgente sleutelvacature.',
+    monthlyPrice: '€ 950',
+    setupFee: '€ 450',
+    ctaText: 'Kies Basis pakket',
+    features: [
+      '1 actieve wervingscampagne tegelijk',
+      'Targeting op Instagram, Facebook & LinkedIn',
+      'Campagne-advertenties in jouw eigen huisstijl',
+      '24/7 AI-assistent Bo voor directe screening',
+      'Basis geschiktheidscontrole (ervaring & salaris)',
+      'Wervify Kandidaten-Dashboard toegang',
+      'Wekelijkse campagne-optimalisatie',
+      'Maandelijks opzegbaar',
+    ],
+  },
+  {
+    id: 'groei',
+    name: 'Groei',
+    badge: 'Meest Gekozen',
+    popular: true,
+    tagline: 'Voor groeiende MKB-organisaties met meerdere vacatures per kwartaal.',
+    monthlyPrice: '€ 1.750',
+    setupFee: '€ 650',
+    ctaText: 'Kies Groei pakket',
+    features: [
+      'Tot 3 gelijktijdige wervingscampagnes',
+      'Volledige multi-channel targeting (Meta + LinkedIn)',
+      'Video- en carrousel advertentieformaten',
+      '24/7 AI-assistent Bo met maatwerk knockout-vragen',
+      'Persoonlijke validatiecheck door Wervify consultant',
+      'Uitgebreid kandidaten-dashboard met direct plannen',
+      'Vaste recruitment marketing strategist als sparringpartner',
+      'Tweewekelijkse video-evaluatie en rapportage',
+      'Maandelijks flexibel aanpasbaar',
+    ],
+  },
+  {
+    id: 'pro',
+    name: 'Pro & Continu',
+    badge: 'Continu Werven',
+    popular: false,
+    tagline: 'Voor bedrijven die structureel talent willen aantrekken en een employer brand bouwen.',
+    monthlyPrice: '€ 2.950',
+    setupFee: '€ 850',
+    ctaText: 'Kies Pro pakket',
+    features: [
+      'Onbeperkt wisselen tussen vacatures (max 6 tegelijk)',
+      'Doorlopende talentpool opbouw in jouw regio',
+      'A/B-testen van visuals en advertentieteksten',
+      'Prioritaire WhatsApp screening via Bo binnen 60 sec',
+      'Volledige telefonische motivatiecheck per kandidaat',
+      'Maatwerk integratie met jouw eigen ATS/HRM-software',
+      'Dedicated recruitment team (copywriter + media buyer)',
+      'Maandelijkse strategische werksessie op directieniveau',
+      'Exclusiviteit op regio en doelgroepsegment',
+    ],
+  },
+];
+
+export const PRICING_ADDONS: PricingAddOn[] = [
+  {
+    id: 'copywriting',
+    title: 'Wervende Vacaturetekst & Funnel Copywriting',
+    description: 'Herschrijven van jouw vacaturetekst naar een psychologisch overtuigende employer pitch.',
+    price: '€ 250 eenmalig',
+  },
+  {
+    id: 'branding-session',
+    title: 'Strategische Employer Branding Sessie',
+    description: '2 uur durende dieptesessie om jouw Employee Value Proposition (EVP) haarscherp te formuleren.',
+    price: '€ 450 eenmalig',
+  },
+  {
+    id: 'photo-shoot',
+    title: 'Bedrijfsfotografie op Locatie (Halve Dag)',
+    description: 'Professionele beelden van jouw echte werkvloer en teamleden voor authentieke advertenties.',
+    price: '€ 750 eenmalig',
+  },
+  {
+    id: 'video-shoot',
+    title: 'Cinematische Wervingsvideo & Social Cutdowns',
+    description: 'Complete videoproductie met mini-interviews van collega\'s en korte dynamische reels.',
+    price: '€ 1.450 eenmalig',
+  },
+  {
+    id: 'ats-integration',
+    title: 'Directe ATS-Koppeling (AFAS, Recruitee, Bullhorn)',
+    description: 'Naadloze synchronisatie van gevalideerde sollicitanten rechtstreeks naar jouw HR-software.',
+    price: '€ 350 eenmalig',
+  },
+];
+
+export const COMPARISON_FEATURES = [
+  { feature: 'Actieve vacatures gelijktijdig', basis: '1 vacature', groei: 'Tot 3 vacatures', pro: 'Tot 6 vacatures' },
+  { feature: 'Doelgroep targeting', basis: 'Meta (IG & FB)', groei: 'Meta + LinkedIn', pro: 'Omnichannel + Retargeting' },
+  { feature: 'Advertentiecreatie in eigen huisstijl', basis: 'Ja', groei: 'Ja (incl. animaties)', pro: 'Ja (incl. maatwerk video)' },
+  { feature: 'AI-assistent Bo (WhatsApp pre-screening)', basis: 'Standaard vragen', groei: 'Maatwerk knockout criteria', pro: 'Prioritaire routing & integraties' },
+  { feature: 'Persoonlijke menselijke validatiecheck', basis: 'Optioneel', groei: 'Inbegrepen', pro: 'Inbegrepen met audio-memo' },
+  { feature: 'Kandidaten Dashboard & Agenda planning', basis: 'Inbegrepen', groei: 'Inbegrepen', pro: 'Inbegrepen + ATS sync' },
+  { feature: 'Vaste recruitment strategist', basis: 'E-mail support', groei: 'Vast contactpersoon', pro: 'Dedicated team + direct mobiel' },
+  { feature: 'Rapportage & optimalisatie', basis: 'Wekelijks rapport', groei: 'Tweewekelijkse call', pro: 'Continu realtime dashboard' },
+  { feature: 'Plaatsingsfee bij aanname', basis: '€0 (Geen fee)', groei: '€0 (Geen fee)', pro: '€0 (Geen fee)' },
+];
