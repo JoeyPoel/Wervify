@@ -13,22 +13,27 @@ interface PricingSectionProps {
 }
 
 /**
- * Animated rolling number ticker for pricing changes.
+ * Animated rolling number ticker for pricing changes (all digits scroll simultaneously).
  */
-const AnimatedPrice: React.FC<{ price: string }> = ({ price }) => {
+const AnimatedPrice: React.FC<{ price: string; isQuarterly: boolean }> = ({ price, isQuarterly }) => {
   const numericPart = price.replace('€', '').trim();
 
   return (
     <div className="flex items-baseline font-mono font-black text-3xl sm:text-4xl text-slate-900 dark:text-wervify-white overflow-hidden py-0.5">
       <span className="mr-1">€</span>
-      <div className="relative inline-flex items-baseline h-[1.15em] overflow-hidden">
+      <div className="relative inline-flex items-baseline h-[1.18em] overflow-hidden">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.span
             key={numericPart}
-            initial={{ y: '100%', opacity: 0 }}
+            initial={{ y: isQuarterly ? '100%' : '-100%', opacity: 0 }}
             animate={{ y: '0%', opacity: 1 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 450, damping: 30 }}
+            exit={{ y: isQuarterly ? '-100%' : '100%', opacity: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 420,
+              damping: 28,
+              mass: 0.8,
+            }}
             className="inline-block"
           >
             {numericPart}
@@ -47,12 +52,18 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
   const [showComparison, setShowComparison] = useState(false);
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'quarterly'>('monthly');
 
-  const getPrice = (basePrice: string) => {
+  const getTierPrice = (tierId: string, basePrice: string) => {
     if (billingCycle === 'monthly') return basePrice;
-    if (basePrice.includes('950')) return '€ 790';
-    if (basePrice.includes('1.750')) return '€ 1.490';
-    if (basePrice.includes('2.950')) return '€ 2.490';
-    return basePrice;
+    switch (tierId) {
+      case 'basis':
+        return '€ 790';
+      case 'groei':
+        return '€ 1.490';
+      case 'pro':
+        return '€ 2.490';
+      default:
+        return basePrice;
+    }
   };
 
   return (
@@ -156,7 +167,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
                   {/* Pricing Box */}
                   <div className="pb-6 mb-6 border-b border-slate-100 dark:border-wervify-marine/50">
                     <div className="flex items-baseline gap-1">
-                      <AnimatedPrice price={getPrice(tier.monthlyPrice)} />
+                      <AnimatedPrice price={getTierPrice(tier.id, tier.monthlyPrice)} isQuarterly={billingCycle === 'quarterly'} />
                       <span className="text-xs text-slate-500 dark:text-slate-400">/ maand</span>
                     </div>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 font-mono">
