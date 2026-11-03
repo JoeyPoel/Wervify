@@ -123,6 +123,24 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectTier }) 
           </div>
         </div>
 
+        {/* Wervify Agency Guarantee Bar */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-12 text-xs font-semibold text-slate-700 dark:text-slate-300">
+          <div className="flex items-center gap-1.5">
+            <Check className="h-4 w-4 text-emerald-500" />
+            <span>{strings.pricing.guaranteePill1}</span>
+          </div>
+          <span className="hidden sm:inline text-slate-300 dark:text-slate-600">•</span>
+          <div className="flex items-center gap-1.5">
+            <Check className="h-4 w-4 text-emerald-500" />
+            <span>{strings.pricing.guaranteePill2}</span>
+          </div>
+          <span className="hidden sm:inline text-slate-300 dark:text-slate-600">•</span>
+          <div className="flex items-center gap-1.5">
+            <Check className="h-4 w-4 text-emerald-500" />
+            <span>{strings.pricing.guaranteePill3}</span>
+          </div>
+        </div>
+
         {/* 3 Tier Cards */}
         <FadeInStagger className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-16">
           {PACKAGES.map((tier) => {

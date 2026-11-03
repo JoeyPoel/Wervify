@@ -3,12 +3,15 @@ import { Container } from '../common/Container';
 import { Card } from '../common/Card';
 import { FadeIn } from '../common/FadeIn';
 import { strings } from '../../constants/strings';
-import { User, PhoneCall, ShieldCheck } from 'lucide-react';
+import { MessageSquare, MapPin, CheckCircle } from 'lucide-react';
 
 /**
- * About Section Teaser with Founder Mission & Dedicated Consultant Card.
+ * About Section Teaser with Real Founder Story (Justin Bassa & Bart).
+ * Genuine Dutch agency presence with direct founder contact channels.
  */
 export const AboutTeaser: React.FC = () => {
+  const ab = strings.about;
+
   return (
     <section id="over-ons" className="py-20 sm:py-28 bg-slate-100/60 dark:bg-wervify-midnight/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
       <Container>
@@ -16,62 +19,82 @@ export const AboutTeaser: React.FC = () => {
           {/* Mission Narrative */}
           <FadeIn className="lg:col-span-7 space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-wervify-white">
-              {strings.about.title}
+              {ab.title}
             </h2>
             <p className="text-lg text-wervify-cobalt dark:text-wervify-azure font-semibold">
-              {strings.about.subtitle}
+              {ab.subtitle}
             </p>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              {strings.about.story}
+            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              {ab.story}
             </p>
 
-            <div className="pt-2 grid grid-cols-2 gap-4 text-xs text-slate-700 dark:text-slate-300">
+            <div className="pt-2 flex flex-col sm:flex-row gap-4 text-xs font-semibold text-slate-700 dark:text-slate-300">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-wervify-cobalt dark:text-wervify-azure shrink-0" />
-                <span>Geen wurgcontracten</span>
+                <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+                <span>{strings.pricing.guaranteePill1}</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4 text-wervify-cobalt dark:text-wervify-azure shrink-0" />
-                <span>100% eigenaarschap van data</span>
+                <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+                <span>{strings.pricing.guaranteePill2}</span>
               </div>
             </div>
           </FadeIn>
 
-          {/* Consultant Spotlight Card */}
+          {/* Founder Spotlight Card */}
           <div className="lg:col-span-5">
             <FadeIn delay={0.12}>
-              <Card variant="elevated" className="border-blue-200/80 dark:border-wervify-azure/40">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-wervify-cobalt to-wervify-cerulean text-white shadow-lg">
-                    <User className="h-7 w-7" />
+              <Card variant="elevated" className="border-slate-200 dark:border-wervify-marine/70 p-6 sm:p-7 space-y-5 shadow-lg">
+                <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-wervify-marine/50">
+                  <div className="flex items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                    <MapPin className="h-3.5 w-3.5 text-wervify-cobalt dark:text-wervify-azure" />
+                    <span>{ab.location}</span>
                   </div>
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-wervify-white">
-                      {strings.about.consultantName}
-                    </h3>
-                    <p className="text-xs text-wervify-cobalt dark:text-wervify-azure font-medium">
-                      {strings.about.consultantRole}
-                    </p>
+                  <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full">
+                    Actief in heel NL
+                  </span>
+                </div>
+
+                <div className="space-y-3">
+                  {/* Founder 1 */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 dark:text-wervify-white">
+                        {ab.founder1Name}
+                      </h3>
+                      <p className="text-xs text-wervify-cobalt dark:text-wervify-azure">
+                        {ab.founder1Role}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Founder 2 */}
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-wervify-marine/40">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 dark:text-wervify-white">
+                        {ab.founder2Name}
+                      </h3>
+                      <p className="text-xs text-wervify-cobalt dark:text-wervify-azure">
+                        {ab.founder2Role}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="pt-2 pb-4 text-xs text-slate-600 dark:text-slate-300 space-y-2 border-t border-slate-100 dark:border-wervify-marine/50">
-                  <p className="font-semibold text-slate-900 dark:text-wervify-ice">
-                    {strings.about.consultantTitle}
-                  </p>
+                <div className="pt-3 border-t border-slate-100 dark:border-wervify-marine/50 text-xs text-slate-600 dark:text-slate-300">
                   <p className="leading-relaxed">
-                    {strings.about.consultantSubtitle}
+                    {ab.consultantSubtitle}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 dark:border-wervify-marine/50 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 dark:text-slate-400">Direct contact:</span>
+                <div className="pt-2">
                   <a
-                    href={`tel:${strings.common.directPhone}`}
-                    className="inline-flex items-center gap-1.5 font-bold text-wervify-cobalt dark:text-wervify-azure hover:underline"
+                    href="https://wa.me/31850000000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-colors"
                   >
-                    <PhoneCall className="h-3.5 w-3.5" />
-                    <span>{strings.common.directPhone}</span>
+                    <MessageSquare className="h-4 w-4" />
+                    <span>{ab.directWhatsAppText}</span>
                   </a>
                 </div>
               </Card>
