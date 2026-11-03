@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="border-t border-wervify-marine/50 bg-wervify-midnight/90 pt-16 pb-12 text-slate-300">
+    <footer className="relative z-10 border-t border-wervify-marine/80 bg-wervify-void pt-16 pb-12 text-slate-300">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-wervify-marine/40">
           {/* Brand Column */}

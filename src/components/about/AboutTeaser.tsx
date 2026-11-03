@@ -11,7 +11,7 @@ import { Compass, User, PhoneCall, ShieldCheck } from 'lucide-react';
  */
 export const AboutTeaser: React.FC = () => {
   return (
-    <section id="over-ons" className="py-20 sm:py-28 bg-white dark:bg-wervify-void border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
+    <section id="over-ons" className="py-20 sm:py-28 bg-slate-100/60 dark:bg-wervify-midnight/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Mission Narrative */}

@@ -18,15 +18,15 @@ export const Card: React.FC<CardProps> = ({
   className,
   ...props
 }) => {
-  const baseStyles = 'relative rounded-xl transition-all duration-200';
+  const baseStyles = 'relative rounded-xl transition-all duration-300';
 
   const variantStyles = {
     elevated:
-      'border border-slate-200/90 dark:border-wervify-marine/70 bg-white dark:bg-wervify-midnight/50 shadow-sm dark:shadow-md dark:backdrop-blur-md p-6 sm:p-8',
+      'border border-slate-200/90 dark:border-wervify-marine/70 bg-white dark:bg-wervify-midnight/60 card-highlight p-6 sm:p-8',
     subtle:
-      'border border-slate-200/60 dark:border-wervify-marine/40 bg-slate-50/80 dark:bg-wervify-midnight/30 p-6 sm:p-8',
+      'border border-slate-200/70 dark:border-wervify-marine/50 bg-slate-50/90 dark:bg-wervify-midnight/40 p-6 sm:p-8',
     interactive:
-      'border border-slate-200/90 dark:border-wervify-marine/70 bg-white dark:bg-wervify-midnight/50 p-6 sm:p-8 hover:border-wervify-cobalt/50 dark:hover:border-wervify-cerulean/70 hover:shadow-lg dark:hover:bg-wervify-midnight/80',
+      'border border-slate-200/90 dark:border-wervify-marine/70 bg-white dark:bg-wervify-midnight/60 card-highlight p-6 sm:p-8 hover:border-wervify-cobalt/60 dark:hover:border-wervify-cerulean/80 hover:shadow-xl hover:-translate-y-0.5',
     outline:
       'border border-slate-200 dark:border-wervify-marine/60 bg-transparent p-6 sm:p-8',
   }[variant];

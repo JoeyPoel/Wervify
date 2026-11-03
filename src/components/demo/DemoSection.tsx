@@ -16,10 +16,7 @@ interface DemoSectionProps {
  */
 export const DemoSection: React.FC<DemoSectionProps> = ({ selectedTier }) => {
   return (
-    <section id="demo" className="py-20 sm:py-28 bg-white dark:bg-wervify-void border-b border-slate-200 dark:border-wervify-marine/40 relative overflow-hidden transition-colors">
-      {/* Background ambient radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-blue-100/50 dark:bg-wervify-cobalt/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="demo" className="py-20 sm:py-28 bg-slate-100/60 dark:bg-wervify-midnight/60 border-b border-slate-200 dark:border-wervify-marine/40 relative overflow-hidden transition-colors">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative z-10">
           {/* Left Column: Benefits & Direct Call Line */}

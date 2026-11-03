@@ -4,7 +4,7 @@ import { Badge } from '../common/Badge';
 import { Card } from '../common/Card';
 import { FadeIn } from '../common/FadeIn';
 import { strings } from '../../constants/strings';
-import { Target, Users, Sparkles } from 'lucide-react';
+import { Target, Users } from 'lucide-react';
 
 /**
  * "Hoe het wél moet" - Active vs. Passive Talent Pool Visual with micro scroll reveal.
@@ -13,7 +13,7 @@ export const PassiveTalentSection: React.FC = () => {
   const { activePool, passivePool } = strings.passiveTalent;
 
   return (
-    <section className="py-20 sm:py-28 bg-slate-50 dark:bg-wervify-midnight/30 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
+    <section className="py-20 sm:py-28 bg-slate-100/60 dark:bg-wervify-midnight/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
       <Container>
         <FadeIn className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <Badge variant="pill">
@@ -71,7 +71,7 @@ export const PassiveTalentSection: React.FC = () => {
                 {/* Highlight ribbon */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-wervify-cobalt text-white shadow-sm">
-                    <Sparkles className="h-3 w-3" />
+                    <Target className="h-3 w-3" />
                     <span>Wervify Domein</span>
                   </span>
                   <span className="text-4xl font-black font-mono text-wervify-cobalt dark:text-wervify-azure">

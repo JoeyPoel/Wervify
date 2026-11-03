@@ -25,19 +25,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath = '/' })
       onNavigate(path);
     } else {
       window.location.hash = path;
+      const id = path.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const navLinks = [
-    { label: strings.nav.approach, path: '/aanpak', anchor: '#aanpak' },
-    { label: strings.nav.pricing, path: '/pakketten', anchor: '#pakketten' },
-    { label: strings.nav.cases, path: '/cases', anchor: '#cases' },
-    { label: strings.nav.about, path: '/over-ons', anchor: '#over-ons' },
-    { label: strings.nav.contact, path: '/contact', anchor: '#contact' },
+    { label: strings.nav.approach, href: '#aanpak' },
+    { label: strings.nav.pricing, href: '#pakketten' },
+    { label: strings.nav.cases, href: '#cases' },
+    { label: strings.nav.about, href: '#over-ons' },
+    { label: strings.nav.contact, href: '#demo' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/90 dark:bg-wervify-void/85 border-b border-slate-200 dark:border-wervify-marine/50 transition-colors duration-200">
+    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/90 dark:bg-wervify-void/85 border-b border-slate-200 dark:border-wervify-marine/50 transition-colors duration-300">
       <Container>
         <div className="flex h-20 items-center justify-between">
           {/* Logo / Wordmark - TODO(brand): official asset replacement */}
@@ -60,12 +63,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath = '/' })
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
-              const isActive = currentPath === link.path;
+              const isActive = currentPath === link.href;
               return (
                 <a
-                  key={link.path}
-                  href={link.path}
-                  onClick={(e) => handleLinkClick(link.path, e)}
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(link.href, e)}
                   className={`text-sm font-medium transition-colors ${
                     isActive
                       ? 'text-wervify-cobalt dark:text-wervify-azure font-semibold'
@@ -130,9 +133,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath = '/' })
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
-                key={link.path}
-                href={link.path}
-                onClick={(e) => handleLinkClick(link.path, e)}
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleLinkClick(link.href, e)}
                 className="px-3 py-2 rounded-lg text-base font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-wervify-marine/50 hover:text-wervify-cobalt dark:hover:text-wervify-ice transition-colors"
               >
                 {link.label}
@@ -144,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPath = '/' })
               variant="primary"
               size="md"
               fullWidth
-              onClick={(e) => handleLinkClick('/#demo', e as any)}
+              onClick={(e) => handleLinkClick('#demo', e as any)}
               className="gap-2"
             >
               <span>{strings.nav.ctaButton}</span>

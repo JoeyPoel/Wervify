@@ -26,7 +26,21 @@ export function useTheme() {
   }, [theme]);
 
   const toggleTheme = useCallback(() => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setTheme((prev) => {
+      const nextTheme = prev === 'light' ? 'dark' : 'light';
+      const root = document.documentElement;
+      root.classList.add('theme-transitioning');
+      if (nextTheme === 'dark') {
+        root.classList.add('dark');
+      } else {
+        root.classList.remove('dark');
+      }
+      localStorage.setItem('wervify-theme', nextTheme);
+      window.setTimeout(() => {
+        root.classList.remove('theme-transitioning');
+      }, 350);
+      return nextTheme;
+    });
   }, []);
 
   return { theme, toggleTheme, isDark: theme === 'dark' };

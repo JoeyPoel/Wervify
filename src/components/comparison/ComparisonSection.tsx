@@ -12,7 +12,7 @@ export const ComparisonSection: React.FC = () => {
   const { headers, rows } = strings.comparison;
 
   return (
-    <section className="py-20 sm:py-28 bg-slate-50 dark:bg-wervify-midnight/30 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
+    <section className="py-20 sm:py-28 bg-slate-100/60 dark:bg-wervify-midnight/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
       <Container>
         <FadeIn className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <Badge variant="pill">

@@ -10,7 +10,7 @@ export const TrustStrip: React.FC = () => {
   const logos = [...strings.trust.logos, ...strings.trust.logos];
 
   return (
-    <section className="py-8 border-b border-slate-200/80 dark:border-wervify-marine/40 bg-slate-50 dark:bg-wervify-midnight/50 overflow-hidden transition-colors">
+    <section className="py-8 border-b border-slate-200/80 dark:border-wervify-marine/40 bg-slate-100/60 dark:bg-wervify-midnight/60 overflow-hidden transition-colors">
       <Container>
         <div className="text-center mb-5">
           <p className="text-[11px] uppercase tracking-widest font-bold text-wervify-cobalt dark:text-wervify-azure">
@@ -21,8 +21,13 @@ export const TrustStrip: React.FC = () => {
 
       {/* Marquee ticker container with smooth edge fades */}
       <div className="relative w-full flex overflow-x-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50 dark:from-wervify-void to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50 dark:from-wervify-void to-transparent z-10" />
+        {/* Left edge fade - Light & Dark smooth cross-fade */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50 to-transparent opacity-100 dark:opacity-0 transition-opacity duration-300 z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-wervify-midnight/50 to-transparent opacity-0 dark:opacity-100 transition-opacity duration-300 z-10" />
+
+        {/* Right edge fade - Light & Dark smooth cross-fade */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50 to-transparent opacity-100 dark:opacity-0 transition-opacity duration-300 z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-wervify-midnight/50 to-transparent opacity-0 dark:opacity-100 transition-opacity duration-300 z-10" />
 
         <div className="animate-marquee flex items-center gap-6 py-1">
           {logos.map((logo, index) => (
