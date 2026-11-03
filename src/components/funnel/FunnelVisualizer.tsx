@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Container } from '../common/Container';
-import { Badge } from '../common/Badge';
 import { FadeIn } from '../common/FadeIn';
 import { strings } from '../../constants/strings';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Smartphone, Bot, ArrowRight, Check, Phone, Calendar } from 'lucide-react';
+import { Bot, ArrowRight, Check, Phone, Calendar } from 'lucide-react';
 
 /**
  * Visual Funnel Simulator: Shows the actual 3-step recruitment machine in action.
@@ -17,18 +16,14 @@ export const FunnelVisualizer: React.FC = () => {
   const fn = strings.funnel;
 
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 bg-white/60 dark:bg-wervify-void/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
+    <section id="aanpak" className="relative overflow-hidden py-20 sm:py-28 bg-white/60 dark:bg-wervify-void/60 border-b border-slate-200 dark:border-wervify-marine/40 transition-colors">
       <Container>
         {/* Section Header */}
         <FadeIn className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <Badge variant="pill">
-            <Smartphone className="h-3.5 w-3.5 text-wervify-cobalt dark:text-wervify-azure mr-1" />
-            <span>{fn.eyebrow}</span>
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-wervify-white leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-wervify-white leading-tight">
             {fn.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             {fn.subtitle}
           </p>
         </FadeIn>
@@ -45,7 +40,7 @@ export const FunnelVisualizer: React.FC = () => {
             }`}
           >
             <div className="flex items-center gap-2 mb-1.5">
-              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold font-mono ${
+              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                 activeStep === 1 ? 'bg-wervify-cobalt text-white' : 'bg-slate-100 dark:bg-wervify-marine text-slate-600 dark:text-slate-300'
               }`}>
                 1
@@ -67,7 +62,7 @@ export const FunnelVisualizer: React.FC = () => {
             }`}
           >
             <div className="flex items-center gap-2 mb-1.5">
-              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold font-mono ${
+              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                 activeStep === 2 ? 'bg-wervify-cobalt text-white' : 'bg-slate-100 dark:bg-wervify-marine text-slate-600 dark:text-slate-300'
               }`}>
                 2
@@ -89,7 +84,7 @@ export const FunnelVisualizer: React.FC = () => {
             }`}
           >
             <div className="flex items-center gap-2 mb-1.5">
-              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold font-mono ${
+              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                 activeStep === 3 ? 'bg-wervify-cobalt text-white' : 'bg-slate-100 dark:bg-wervify-marine text-slate-600 dark:text-slate-300'
               }`}>
                 3
@@ -116,7 +111,7 @@ export const FunnelVisualizer: React.FC = () => {
                 className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
               >
                 <div className="md:col-span-6 space-y-4 text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-wervify-marine/40 text-wervify-cobalt dark:text-wervify-azure text-xs font-mono font-bold">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-wervify-marine/40 text-wervify-cobalt dark:text-wervify-azure text-xs font-semibold">
                     <span>Meta & LinkedIn Ad Machine</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-wervify-white">
@@ -197,7 +192,7 @@ export const FunnelVisualizer: React.FC = () => {
                 className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
               >
                 <div className="md:col-span-6 space-y-4 text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-mono font-bold">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold">
                     <span>24/7 AI-Assistent Bo</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-wervify-white">
@@ -231,7 +226,7 @@ export const FunnelVisualizer: React.FC = () => {
                           <span className="text-[10px] text-emerald-600 font-medium">Online • 42s reactietijd</span>
                         </div>
                       </div>
-                      <span className="text-[10px] font-mono bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
+                      <span className="text-[10px] bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 px-2 py-0.5 rounded-full font-bold">
                         Gecheckt
                       </span>
                     </div>
@@ -263,7 +258,7 @@ export const FunnelVisualizer: React.FC = () => {
                 className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
               >
                 <div className="md:col-span-6 space-y-4 text-left">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-wervify-marine/40 text-wervify-cobalt dark:text-wervify-azure text-xs font-mono font-bold">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-wervify-marine/40 text-wervify-cobalt dark:text-wervify-azure text-xs font-semibold">
                     <span>Direct Sollicitatiegesprek</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-wervify-white">
@@ -292,7 +287,7 @@ export const FunnelVisualizer: React.FC = () => {
                         <h4 className="font-extrabold text-slate-900 dark:text-white text-base">Robin Jansen (32)</h4>
                         <p className="text-xs text-slate-500">Utrecht • 6 jr werkervaring</p>
                       </div>
-                      <span className="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-xs font-bold font-mono">
+                      <span className="px-2.5 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
                         Geschikt ✓
                       </span>
                     </div>

@@ -5,24 +5,17 @@ import { AmbientBackground } from './components/common/AmbientBackground';
 import { Hero } from './components/hero/Hero';
 import { TrustStrip } from './components/trust/TrustStrip';
 import { ProblemSection } from './components/problem/ProblemSection';
-import { PassiveTalentSection } from './components/pillars/PassiveTalentSection';
 import { FunnelVisualizer } from './components/funnel/FunnelVisualizer';
-import { PillarsSection } from './components/pillars/PillarsSection';
-import { ProcessSection } from './components/process/ProcessSection';
-import { ResultsBand } from './components/results/ResultsBand';
 import { CasesSection } from './components/cases/CasesSection';
-import { ComparisonSection } from './components/comparison/ComparisonSection';
-import { SavingsCalculator } from './components/calculator/SavingsCalculator';
-import { VideoSection } from './components/video/VideoSection';
 import { PricingSection } from './components/pricing/PricingSection';
 import { TestimonialsSection } from './components/trust/TestimonialsSection';
 import { FAQSection } from './components/faq/FAQSection';
 import { AboutTeaser } from './components/about/AboutTeaser';
-import { MissionVisionSection } from './components/about/MissionVisionSection';
 import { DemoSection } from './components/demo/DemoSection';
 
 /**
- * Root Application Component with Client-Side Routing and Deep Linking.
+ * Root Application Component with Smooth Anchor Navigation.
+ * Clean, authentic Dutch agency structure modeled after Pulse Agency, Toppa, and Sticky Chapters.
  */
 export const App: React.FC = () => {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -103,27 +96,18 @@ export const App: React.FC = () => {
     navigate('#demo');
   };
 
-  // View router: Always render full landing page to preserve complete experience without cutting off upper sections
   const renderContent = () => {
     return (
       <>
         <Hero onPlanDemo={handlePlanDemo} onExploreApproach={handleExploreApproach} />
         <TrustStrip />
         <ProblemSection />
-        <PassiveTalentSection />
         <FunnelVisualizer />
-        <PillarsSection />
-        <ProcessSection />
-        <ResultsBand />
         <CasesSection />
-        <ComparisonSection />
-        <SavingsCalculator onPlanDemo={handlePlanDemo} />
-        <VideoSection />
         <PricingSection onSelectTier={handleSelectTier} />
         <TestimonialsSection />
         <FAQSection />
         <AboutTeaser />
-        <MissionVisionSection />
         <DemoSection selectedTier={selectedTier} />
       </>
     );
@@ -131,9 +115,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen flex flex-col bg-slate-50/70 text-slate-900 dark:bg-wervify-void dark:text-slate-100 transition-colors duration-300">
-      {/* Universal Zero-GPU-Overhead Ambient Background across all sections */}
-      <AmbientBackground fixed intensity="vibrant" showGrid={true} />
-
+      <AmbientBackground fixed intensity="vibrant" />
       <Navbar onNavigate={navigate} currentPath={currentPath} />
       <main className="relative z-10 flex-1">
         {renderContent()}
@@ -142,6 +124,3 @@ export const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;
-
